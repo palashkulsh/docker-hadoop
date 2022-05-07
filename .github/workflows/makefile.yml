@@ -13,9 +13,8 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
       - 
-        uses: cardinalby/export-env-action@v1
-        with:
-          envFile: 'hadoop.env'    
+        name: read environment file
+        run: cat hadoop.env >>${GITHUB_ENV}   
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
